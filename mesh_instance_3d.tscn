@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://bwhe0sn3qlaf"]
+
+[ext_resource type="Script" uid="uid://cy1e7st17qfwd" path="res://mesh_instance_3d.gd" id="1_etjlb"]
+[ext_resource type="PackedScene" uid="uid://htwbng3ynpbs" path="res://player.tscn" id="2_aq2ne"]
+[ext_resource type="Script" uid="uid://utuj8drp7e4n" path="res://Interactable.gd" id="3_etjlb"]
+[ext_resource type="PackedScene" uid="uid://cee6cniju8xo7" path="res://scenes/npc.tscn" id="4_gw35f"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6xxru"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_yvhtj"]
+sky_material = SubResource("ProceduralSkyMaterial_6xxru")
+
+[sub_resource type="Environment" id="Environment_aq2ne"]
+background_mode = 2
+sky = SubResource("Sky_yvhtj")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aq2ne"]
+vertex_color_is_srgb = true
+albedo_color = Color(0.261979, 0.000219066, 3.60981e-08, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aq2ne"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_etjlb"]
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_etjlb")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_aq2ne")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(85.0793, 0, 0, 0, 18.1653, 0, 0, 0, 77.7897, 7.62939e-06, -7.25042, 3.18122)
+material_override = SubResource("StandardMaterial3D_aq2ne")
+use_collision = true
+
+[node name="Player" parent="." instance=ExtResource("2_aq2ne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0533295, 5.08407, 0.247742)
+
+[node name="Bomb" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3927, -6.57777)
+script = ExtResource("3_etjlb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bomb"]
+mesh = SubResource("BoxMesh_aq2ne")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bomb"]
+shape = SubResource("BoxShape3D_etjlb")
+
+[node name="NPC" parent="." instance=ExtResource("4_gw35f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.98073, -14.4314)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]

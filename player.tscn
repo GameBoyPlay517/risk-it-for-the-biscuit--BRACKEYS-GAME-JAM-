@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://htwbng3ynpbs"]
+
+[ext_resource type="Script" uid="uid://dvrjbbjdehf3y" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://bb3iaiatn186t" path="res://scenes/interact_ray.tscn" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://drwtsfoik01gm" path="res://UI/crosshair.png" id="4_sweqy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gw35f"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_etjlb"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_onrkg")
+
+[node name="pivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.053, 0.494216, -0.489962)
+
+[node name="InteractRay" parent="pivot" instance=ExtResource("2_i3pqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.053, 0.494216, -0.489962)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_gw35f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_etjlb")
+skeleton = NodePath("../pivot")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Crosshair" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.34, 0.34)
+texture = ExtResource("4_sweqy")

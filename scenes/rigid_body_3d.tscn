@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://rtu2anilbfd4"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ba4mr"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mvxmr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n1c64"]
+
+[node name="bomb" type="RigidBody3D"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ba4mr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_mvxmr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("BoxMesh_n1c64")
+skeleton = NodePath("../..")
