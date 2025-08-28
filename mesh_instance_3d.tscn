@@ -26,7 +26,7 @@ albedo_color = Color(0.261979, 0.000219066, 3.60981e-08, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_etjlb"]
 
-[node name="World" type="Node3D"]
+[node name="Main" type="Node3D"]
 script = ExtResource("1_etjlb")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -43,6 +43,10 @@ use_collision = true
 
 [node name="Player" parent="." instance=ExtResource("2_aq2ne")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0533295, 5.08407, 0.247742)
+speed = 8
+fall_acceleration = 980
+mouse_sensitivity = 0.002
+maxStamina = 1.75
 
 [node name="Bomb" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3927, -6.57777)
@@ -57,4 +61,4 @@ shape = SubResource("BoxShape3D_etjlb")
 [node name="NPC" parent="." instance=ExtResource("4_gw35f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.98073, -14.4314)
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]

@@ -123,3 +123,15 @@ func _input(event):
 		$pivot.rotate_x(-event.relative.y * mouse_sensitivity)
 		$pivot.rotation.x = clamp($pivot.rotation.x, -1.2,1.2)
 	
+
+signal hit
+
+func die():
+	hit.emit()
+	queue_free()
+
+func _on_hitbox_body_entered(body: Node3D) -> void:
+	print("hittingObject..")
+	die()
+	
+	pass # Replace with function body.
