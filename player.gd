@@ -130,7 +130,7 @@ func die():
 	hit.emit()
 	queue_free()
 
-func _on_hitbox_body_entered(body: Node3D) -> void:
+func _on_hitbox_body_entered(body):
 	print("hittingObject..")
 	die()
 	
