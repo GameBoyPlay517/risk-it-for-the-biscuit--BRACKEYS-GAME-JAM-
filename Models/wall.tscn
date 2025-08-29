@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cme3q4ysc74sk"]
+
+[ext_resource type="PackedScene" uid="uid://dhngv0ko6yu4n" path="res://Models/wall.glb" id="1_m2orx"]
+
+[node name="wall2" instance=ExtResource("1_m2orx")]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmiwv4ee54bs4"]
+
+[ext_resource type="PackedScene" uid="uid://cxa16pddtllqb" path="res://Models/watercoolerofcalls.glb" id="1_2fw06"]
+
+[node name="watercoolerofcalls" instance=ExtResource("1_2fw06")]

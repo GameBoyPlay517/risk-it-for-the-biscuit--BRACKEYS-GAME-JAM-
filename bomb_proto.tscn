@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2bf7fjrhxjda"]
+
+[ext_resource type="PackedScene" uid="uid://djhcar7dglbjb" path="res://Models/BombProto.glb" id="1_x2jfk"]
+
+[node name="BombProto" instance=ExtResource("1_x2jfk")]
