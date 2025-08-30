@@ -1,5 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmiwv4ee54bs4"]
+[gd_scene load_steps=3 format=3 uid="uid://cmiwv4ee54bs4"]
 
 [ext_resource type="PackedScene" uid="uid://cxa16pddtllqb" path="res://Models/watercoolerofcalls.glb" id="1_2fw06"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2fw06"]
+size = Vector3(0.783936, 2.78235, 0.765137)
+
 [node name="watercoolerofcalls" instance=ExtResource("1_2fw06")]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." index="4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" index="0"]
+transform = Transform3D(1, -0.000379427, -0.000129487, 0.000379426, 1, -2.02836e-05, 0.000129492, 2.02473e-05, 1, 0.176392, 1.22235, -0.0105084)
+shape = SubResource("BoxShape3D_2fw06")

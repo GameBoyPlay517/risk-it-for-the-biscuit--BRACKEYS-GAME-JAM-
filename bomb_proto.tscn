@@ -1,5 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2bf7fjrhxjda"]
+[gd_scene load_steps=3 format=3 uid="uid://c2bf7fjrhxjda"]
 
 [ext_resource type="PackedScene" uid="uid://djhcar7dglbjb" path="res://Models/BombProto.glb" id="1_x2jfk"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_x2jfk"]
+size = Vector3(0.240295, 0.205688, 0.299072)
+
 [node name="BombProto" instance=ExtResource("1_x2jfk")]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00209317, 0.0884919, 0.0142822)
+shape = SubResource("BoxShape3D_x2jfk")

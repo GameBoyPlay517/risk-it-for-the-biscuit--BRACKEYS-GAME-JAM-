@@ -1,5 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://lqp2a4o3hleh"]
+[gd_scene load_steps=3 format=3 uid="uid://lqp2a4o3hleh"]
 
 [ext_resource type="PackedScene" uid="uid://douauvx41iw2u" path="res://Models/officechair.glb" id="1_a4dwi"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_e6klc"]
+size = Vector3(0.785919, 1.59583, 0.916595)
+
 [node name="officechair" instance=ExtResource("1_a4dwi")]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." index="6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0450897, 0.629122, 0.0165863)
+shape = SubResource("BoxShape3D_e6klc")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwhe0sn3qlaf"]
+[gd_scene load_steps=12 format=3 uid="uid://bwhe0sn3qlaf"]
 
 [ext_resource type="Script" uid="uid://cy1e7st17qfwd" path="res://mesh_instance_3d.gd" id="1_etjlb"]
 [ext_resource type="PackedScene" uid="uid://htwbng3ynpbs" path="res://player.tscn" id="2_aq2ne"]
 [ext_resource type="Script" uid="uid://utuj8drp7e4n" path="res://Interactable.gd" id="3_etjlb"]
 [ext_resource type="PackedScene" uid="uid://cee6cniju8xo7" path="res://scenes/npc.tscn" id="4_gw35f"]
+[ext_resource type="PackedScene" uid="uid://b6jtcq1p36c4l" path="res://world.tscn" id="5_hbm4x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6xxru"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -42,7 +43,7 @@ material_override = SubResource("StandardMaterial3D_aq2ne")
 use_collision = true
 
 [node name="Player" parent="." instance=ExtResource("2_aq2ne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0533295, 5.08407, 0.247742)
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.0533295, 5.08407, 0.247742)
 
 [node name="Bomb" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3927, -6.57777)
@@ -56,5 +57,8 @@ shape = SubResource("BoxShape3D_etjlb")
 
 [node name="NPC" parent="." instance=ExtResource("4_gw35f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.98073, -14.4314)
+
+[node name="Node3D" parent="." instance=ExtResource("5_hbm4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0108, 4.278, 1.1271)
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
