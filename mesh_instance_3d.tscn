@@ -38,7 +38,7 @@ material_override = SubResource("StandardMaterial3D_aq2ne")
 use_collision = true
 
 [node name="Player" parent="." instance=ExtResource("2_aq2ne")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.0533295, 5.08407, 0.247742)
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -1.57785, 5.08407, 0.250623)
 
 [node name="NPC" parent="." instance=ExtResource("4_gw35f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.98073, -14.4314)
