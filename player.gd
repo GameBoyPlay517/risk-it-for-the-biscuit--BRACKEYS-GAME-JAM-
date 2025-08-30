@@ -18,7 +18,7 @@ var normalScale = scale.y
 const  RAY_LENGTH = 1000.0
 var originalSpeed = speed 
 var crouchSpeed = speed/3 
-var sprintSpeed = speed * 3
+var sprintSpeed = speed * 1.75
 var stamina = maxStamina
 
 func _ready(): 
@@ -75,7 +75,7 @@ func _physics_process(delta):
 			#print(speed)
 		elif Input.is_action_pressed("sprint") and Input.is_action_pressed("move_forward") and canSprint:
 			speed = sprintSpeed
-			scale.y = lerp(scale.y, normalScale + .5, 5.0 * delta)
+			scale.y = lerp(scale.y, normalScale + .00125, 5.0 * delta)
 			stamina -= 1 * delta
 			stamina = clamp(stamina, 0, maxStamina)
 			#sprintBar.value = stamina
