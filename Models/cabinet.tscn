@@ -1,11 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3jqikain13ju"]
+[gd_scene load_steps=7 format=3 uid="uid://c3jqikain13ju"]
 
 [ext_resource type="PackedScene" uid="uid://c8gk6dxqifpqt" path="res://Models/cabinet.glb" id="1_ei0b6"]
+[ext_resource type="Texture2D" uid="uid://ckuo446v2b02q" path="res://Textures/floor.png" id="2_guvw2"]
+[ext_resource type="Texture2D" uid="uid://qymgivwbloup" path="res://Textures/deskmetal.png" id="3_evin3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j614k"]
+albedo_texture = ExtResource("2_guvw2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vqik"]
+albedo_texture = ExtResource("3_evin3")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ffww8"]
 size = Vector3(0.837891, 1.86157, 1.32031)
 
 [node name="cabinet" instance=ExtResource("1_ei0b6")]
+
+[node name="CabinetHandle" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_j614k")
+
+[node name="Cabinet" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_4vqik")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." index="2"]
 transform = Transform3D(0.769623, 0, 0, 0, 1, 0, 0, 0, 0.8495, 0.0406775, 0, -0.00832558)

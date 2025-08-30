@@ -1,11 +1,62 @@
-[gd_scene load_steps=3 format=3 uid="uid://cep2yfleeykeh"]
+[gd_scene load_steps=14 format=3 uid="uid://cep2yfleeykeh"]
 
 [ext_resource type="PackedScene" uid="uid://bam7dnaeh4aej" path="res://Models/desk.glb" id="1_ep8l3"]
+[ext_resource type="Texture2D" uid="uid://ckuo446v2b02q" path="res://Textures/floor.png" id="2_kbe4o"]
+[ext_resource type="Texture2D" uid="uid://qymgivwbloup" path="res://Textures/deskmetal.png" id="2_t1k3i"]
+[ext_resource type="Texture2D" uid="uid://d1pswc7f1etce" path="res://Textures/deskwood.png" id="2_xnhey"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1wp4s"]
+albedo_texture = ExtResource("2_t1k3i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fqda6"]
+albedo_texture = ExtResource("2_t1k3i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n6acj"]
+albedo_texture = ExtResource("2_kbe4o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0m7g"]
+albedo_texture = ExtResource("2_xnhey")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_78ofn"]
+albedo_texture = ExtResource("2_t1k3i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2urgg"]
+albedo_texture = ExtResource("2_t1k3i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnhey"]
+albedo_texture = ExtResource("2_kbe4o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1k3i"]
+albedo_texture = ExtResource("2_kbe4o")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_osdrf"]
 size = Vector3(2.96069, 1.53918, 1.29004)
 
 [node name="desk" instance=ExtResource("1_ep8l3")]
+
+[node name="DeskSupport" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_1wp4s")
+
+[node name="CabinetDesk" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_fqda6")
+
+[node name="CabinetHandleDesk" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_n6acj")
+
+[node name="DeskTop" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_b0m7g")
+
+[node name="ComputerOne" parent="." index="4"]
+material_override = SubResource("StandardMaterial3D_78ofn")
+
+[node name="ComputerTwo" parent="." index="5"]
+material_override = SubResource("StandardMaterial3D_2urgg")
+
+[node name="Computer" parent="." index="6"]
+material_override = SubResource("StandardMaterial3D_xnhey")
+
+[node name="Keyboard" parent="." index="7"]
+material_override = SubResource("StandardMaterial3D_t1k3i")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." index="8"]
 

@@ -1,11 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://lqp2a4o3hleh"]
+[gd_scene load_steps=12 format=3 uid="uid://lqp2a4o3hleh"]
 
 [ext_resource type="PackedScene" uid="uid://douauvx41iw2u" path="res://Models/officechair.glb" id="1_a4dwi"]
+[ext_resource type="Texture2D" uid="uid://ckuo446v2b02q" path="res://Textures/floor.png" id="2_mmvvc"]
+[ext_resource type="Texture2D" uid="uid://qymgivwbloup" path="res://Textures/deskmetal.png" id="2_xbg8k"]
+[ext_resource type="Texture2D" uid="uid://d1edjjivfgd40" path="res://Textures/watal.png" id="3_texbx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bj23v"]
+albedo_texture = ExtResource("2_xbg8k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ubn6q"]
+albedo_texture = ExtResource("3_texbx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbg8k"]
+albedo_texture = ExtResource("2_mmvvc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w5iik"]
+albedo_texture = ExtResource("3_texbx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_texbx"]
+albedo_texture = ExtResource("2_mmvvc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qx44p"]
+albedo_texture = ExtResource("3_texbx")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e6klc"]
 size = Vector3(0.785919, 1.59583, 0.916595)
 
 [node name="officechair" instance=ExtResource("1_a4dwi")]
+
+[node name="ChairBottom" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_bj23v")
+
+[node name="ChairComfy" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_ubn6q")
+
+[node name="ChairBranches" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_xbg8k")
+
+[node name="ChairBack" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_w5iik")
+
+[node name="BackConnector" parent="." index="4"]
+material_override = SubResource("StandardMaterial3D_texbx")
+
+[node name="ChairSeat" parent="." index="5"]
+material_override = SubResource("StandardMaterial3D_qx44p")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." index="6"]
 

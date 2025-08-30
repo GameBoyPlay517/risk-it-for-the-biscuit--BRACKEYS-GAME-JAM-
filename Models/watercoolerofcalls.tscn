@@ -1,11 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmiwv4ee54bs4"]
+[gd_scene load_steps=9 format=3 uid="uid://cmiwv4ee54bs4"]
 
 [ext_resource type="PackedScene" uid="uid://cxa16pddtllqb" path="res://Models/watercoolerofcalls.glb" id="1_2fw06"]
+[ext_resource type="Texture2D" uid="uid://d1edjjivfgd40" path="res://Textures/watal.png" id="2_2rkqy"]
+[ext_resource type="Texture2D" uid="uid://ckuo446v2b02q" path="res://Textures/floor.png" id="2_d7kso"]
+[ext_resource type="Texture2D" uid="uid://qymgivwbloup" path="res://Textures/deskmetal.png" id="2_vcw2k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pbwa7"]
+albedo_texture = ExtResource("2_2rkqy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rkqy"]
+albedo_texture = ExtResource("2_vcw2k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vcw2k"]
+albedo_texture = ExtResource("2_d7kso")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2fw06"]
 size = Vector3(0.783936, 2.78235, 0.765137)
 
 [node name="watercoolerofcalls" instance=ExtResource("1_2fw06")]
+
+[node name="Water" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_pbwa7")
+
+[node name="Base" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_2rkqy")
+
+[node name="WaterWalkie" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_vcw2k")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." index="4"]
 
