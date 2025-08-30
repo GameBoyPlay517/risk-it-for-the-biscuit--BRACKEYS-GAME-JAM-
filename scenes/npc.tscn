@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cee6cniju8xo7"]
+[gd_scene load_steps=6 format=3 uid="uid://cee6cniju8xo7"]
 
 [ext_resource type="Script" uid="uid://euto78w43e14" path="res://scenes/npc.gd" id="1_nh2m4"]
 
@@ -6,9 +6,13 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nh2m4"]
 
-[node name="NPC" type="CharacterBody3D"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nh2m4"]
+
+[sub_resource type="Curve3D" id="Curve3D_nh2m4"]
+
+[node name="NPC" type="CharacterBody3D" groups=["enemies"]]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 4
 script = ExtResource("1_nh2m4")
 
 [node name="Pivot" type="Node3D" parent="."]
@@ -17,5 +21,23 @@ script = ExtResource("1_nh2m4")
 mesh = SubResource("CapsuleMesh_tcuxl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.32, 0, 0, 0, 1.32, 0, 0, 0, 1.32, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_nh2m4")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." groups=["enemies"]]
+target_desired_distance = 2.0
+path_height_offset = -0.5
+
+[node name="FOV" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FOV"]
+transform = Transform3D(6.255, 0, 0, 0, 0.332246, 0, 0, 0, 6.255, 0, 0.657927, 0)
+shape = SubResource("CylinderShape3D_nh2m4")
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_nh2m4")
+
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
+[connection signal="body_entered" from="FOV" to="." method="_on_fov_body_entered"]
+[connection signal="body_exited" from="FOV" to="." method="_on_fov_body_exited"]
