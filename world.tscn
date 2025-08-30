@@ -1452,12 +1452,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 17.906
 [node name="desk10" parent="." instance=ExtResource("1_fj7yv")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 17.7502, 0.0566943, -0.693079)
 
-[node name="desk11" parent="." instance=ExtResource("1_fj7yv")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 17.9065, 0.0566947, 0.781105)
-
-[node name="desk12" parent="." instance=ExtResource("1_fj7yv")]
-transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 17.7502, -4.76837e-07, -0.693079)
-
 [node name="desk13" parent="." instance=ExtResource("1_fj7yv")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 23.9166, 0.0566947, 0.781105)
 
@@ -1483,7 +1477,7 @@ transform = Transform3D(0.97301, 0, 0.230763, 0, 1, 0, -0.230763, 0, 0.97301, 32
 transform = Transform3D(0.486122, 0, -0.873891, 0, 1, 0, 0.873891, 0, 0.486122, 23.7075, -2.38419e-07, -1.80695)
 
 [node name="officechair6" parent="." instance=ExtResource("3_tlwt5")]
-transform = Transform3D(-0.261414, 0, -0.965227, 0, 1, 0, 0.965227, 0, -0.261414, 18.0505, -2.38419e-07, -1.80695)
+transform = Transform3D(-0.261414, 0, -0.965227, 0, 1, 0, 0.965227, 0, -0.261414, 18.0505, -2.38419e-07, -1.92214)
 
 [node name="officechair7" parent="." instance=ExtResource("3_tlwt5")]
 transform = Transform3D(0.248233, 0, -0.9687, 0, 1, 0, 0.9687, 0, 0.248233, 14.3022, -2.38419e-07, -1.80695)
@@ -1492,7 +1486,7 @@ transform = Transform3D(0.248233, 0, -0.9687, 0, 1, 0, 0.9687, 0, 0.248233, 14.3
 transform = Transform3D(0.326525, 0, 0.945189, 0, 1, 0, -0.945189, 0, 0.326525, 14.326, -2.38419e-07, 2.05896)
 
 [node name="officechair9" parent="." instance=ExtResource("3_tlwt5")]
-transform = Transform3D(-0.486122, 0, 0.873891, 0, 1, 0, -0.873891, 0, -0.486122, 18.0267, -2.38419e-07, 2.05896)
+transform = Transform3D(-0.486122, 0, 0.873891, 0, 1, 0, -0.873891, 0, -0.486122, 18.0267, -2.38419e-07, 2.0226)
 
 [node name="officechair10" parent="." instance=ExtResource("3_tlwt5")]
 transform = Transform3D(0.261414, 0, 0.965227, 0, 1, 0, -0.965227, 0, 0.261414, 23.6837, -2.38419e-07, 2.05896)
